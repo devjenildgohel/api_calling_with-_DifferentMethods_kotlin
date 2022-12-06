@@ -39,7 +39,7 @@ class RetrofitActivity : AppCompatActivity() {
     }
 
     private fun getData() {
-        val retrofit = RetrofitAPI.create()
+        val retrofit = RetrofiAPI.create()
         val call : Call<DataModel?>? = retrofit.getHero()
 
         call!!.enqueue(object : Callback<DataModel?> {
