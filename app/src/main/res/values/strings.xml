@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ApiCalling</string>
     <string name="call_api">Call API</string>
+    <string name="go_to_retrofit_actitivty">Go TO RetroFit Actitivty</string>
 </resources>

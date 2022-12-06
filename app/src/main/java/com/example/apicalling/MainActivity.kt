@@ -2,6 +2,7 @@
 
 package com.example.apicalling
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -22,6 +23,14 @@ class MainActivity : AppCompatActivity() {
         val responseTextView: TextView? = findViewById(R.id.response_TextView)
 
         val apiCallButton: AppCompatButton? = findViewById(R.id.apiCall_Button)
+        val goToRetrofitActivity: AppCompatButton? = findViewById(R.id.retroFitAPI_Button)
+
+        goToRetrofitActivity?.setOnClickListener(
+            {
+                val intent = Intent(this,RetrofitActivity::class.java)
+                startActivity(intent)
+            }
+        )
 
         apiCallButton?.setOnClickListener(View.OnClickListener {
             apiCalling(responseTextView)
