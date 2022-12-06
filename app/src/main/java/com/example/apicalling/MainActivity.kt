@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.AppCompatButton
+import com.example.apicalling.Retrofit.RetrofitActivity
+import com.example.apicalling.Retrofitwithrecycler.RetrofitWithRecyclerView
 import kotlinx.coroutines.*
 import java.net.URL
 
@@ -24,10 +26,17 @@ class MainActivity : AppCompatActivity() {
 
         val apiCallButton: AppCompatButton? = findViewById(R.id.apiCall_Button)
         val goToRetrofitActivity: AppCompatButton? = findViewById(R.id.retroFitAPI_Button)
+        val goToRetrofitRecyActivity: AppCompatButton? = findViewById(R.id.retroFitAPIWithRecy_Button)
 
         goToRetrofitActivity?.setOnClickListener(
             {
-                val intent = Intent(this,RetrofitActivity::class.java)
+                val intent = Intent(this, RetrofitActivity::class.java)
+                startActivity(intent)
+            }
+        )
+        goToRetrofitRecyActivity?.setOnClickListener(
+            {
+                val intent = Intent(this, RetrofitWithRecyclerView::class.java)
                 startActivity(intent)
             }
         )

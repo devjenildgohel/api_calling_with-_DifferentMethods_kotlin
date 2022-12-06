@@ -1,4 +1,4 @@
-package com.example.apicalling
+package com.example.apicalling.Retrofit
 
 data class DataModel(
     val id : String,

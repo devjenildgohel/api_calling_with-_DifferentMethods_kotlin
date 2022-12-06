@@ -1,4 +1,4 @@
-package com.example.apicalling
+package com.example.apicalling.Retrofit
 
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -12,7 +12,7 @@ interface RetrofitAPI {
     fun getHero() : Call<DataModel?>?
 
     companion object{
-        fun create() : RetrofitAPI{
+        fun create() : RetrofitAPI {
 
 //            val interceptor : HttpLoggingInterceptor? = HttpLoggingInterceptor()
 //            interceptor!!.setLevel(HttpLoggingInterceptor.Level.BODY)

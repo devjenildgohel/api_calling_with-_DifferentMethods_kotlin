@@ -1,4 +1,4 @@
-package com.example.apicalling
+package com.example.apicalling.Retrofit
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
+import com.example.apicalling.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
