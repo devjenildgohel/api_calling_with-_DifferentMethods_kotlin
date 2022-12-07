@@ -47,7 +47,7 @@ class RetrofitWithRecyclerView : AppCompatActivity() {
                 val characterList = mutableListOf<CharacterModel>()
 
                 characters?.let { characterList.addAll(it) }
-                mRecyclerViewAdapter.setValuteListItems(characterList)
+                mRecyclerViewAdapter.setCharacterList(characterList)
                 progressBar.visibility = View.GONE
 
                 Log.d("TAG", "Success " + response.body().toString())

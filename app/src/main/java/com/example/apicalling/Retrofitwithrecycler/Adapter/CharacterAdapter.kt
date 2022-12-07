@@ -14,8 +14,8 @@ import com.example.apicalling.Retrofitwithrecycler.CharacterModel
 
 class CharacterAdapter(private val context : Context) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
 
-    var characterList : MutableList<CharacterModel> = mutableListOf<CharacterModel>()
-    var mCharacters : MutableList<CharacterModel> = mutableListOf<CharacterModel>()
+    private var characterList : MutableList<CharacterModel> = mutableListOf()
+    private var mCharacters : MutableList<CharacterModel> = mutableListOf()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,13 +24,14 @@ class CharacterAdapter(private val context : Context) : RecyclerView.Adapter<Cha
         return ViewHolder(view)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentCharacter = mCharacters[position]
 
-        Glide.with(context).load(currentCharacter.images!!.get("lg").toString()).into(holder.characterImage)
-        holder.characterID.text = currentCharacter.id.toString()
-        holder.characterName.text = currentCharacter.name.toString()
-        holder.characterSlug.text = currentCharacter.slug.toString()
+        Glide.with(context).load(currentCharacter.images!!["lg"].toString()).into(holder.characterImage)
+        holder.characterName.text = "Name : ${currentCharacter.name.toString()}"
+        holder.characterSlug.text = "Slug : ${currentCharacter.slug.toString()}"
+        holder.characterWork.text = "Work : ${currentCharacter.work!!["occupation"].toString()}"
 
     }
 
@@ -39,7 +40,7 @@ class CharacterAdapter(private val context : Context) : RecyclerView.Adapter<Cha
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setValuteListItems(characterItemList: MutableList<CharacterModel>){
+    fun setCharacterList(characterItemList: MutableList<CharacterModel>){
         characterList.clear()
         characterList.addAll(characterItemList)
         mCharacters.addAll(characterList)
@@ -47,10 +48,10 @@ class CharacterAdapter(private val context : Context) : RecyclerView.Adapter<Cha
     }
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val characterImage = itemView.findViewById<AppCompatImageView>(R.id.characterImageView)
-        val characterID = itemView.findViewById<AppCompatTextView>(R.id.characterIDTextView)
-        val characterName = itemView.findViewById<AppCompatTextView>(R.id.characterNameTextView)
-        val characterSlug = itemView.findViewById<AppCompatTextView>(R.id.characterSlugTextView)
+        val characterImage: AppCompatImageView = itemView.findViewById(R.id.characterImageView)
+        val characterWork: AppCompatTextView = itemView.findViewById(R.id.characterWorkTextView)!!
+        val characterName: AppCompatTextView = itemView.findViewById(R.id.characterNameTextView)!!
+        val characterSlug = itemView.findViewById<AppCompatTextView>(R.id.characterSlugTextView)!!
     }
 
 }

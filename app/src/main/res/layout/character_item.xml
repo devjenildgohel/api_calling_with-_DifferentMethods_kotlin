@@ -27,14 +27,6 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/characterIDTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
-
-            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/characterNameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,6 +36,14 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/characterSlugTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/characterWorkTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
